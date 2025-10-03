@@ -4,8 +4,6 @@ from pathlib import Path
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-BASE_DIR = Path(__file__).resolve().parent.parent
-
 SECRET_KEY = os.getenv("DJANGO_SECRET_KEY", "dev-secret-key")
 DEBUG = os.getenv("DJANGO_DEBUG", "1") == "1"
 ALLOWED_HOSTS = os.getenv("ALLOWED_HOSTS", "*").split(",")
@@ -60,9 +58,9 @@ WSGI_APPLICATION = "appointments.wsgi.application"
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.mysql",
-        "NAME": os.getenv("RDS_DB_NAME", "appointments_db"),
+        "NAME": os.getenv("RDS_DB_NAME", "citas"),
         "USER": os.getenv("RDS_USERNAME", "root"),
-        "PASSWORD": os.getenv("RDS_PASSWORD", ""),
+        "PASSWORD": os.getenv("RDS_PASSWORD", "admin"),
         "HOST": os.getenv("RDS_HOSTNAME", "localhost"),
         "PORT": os.getenv("RDS_PORT", "3306"),
         "OPTIONS": {"init_command": "SET sql_mode='STRICT_TRANS_TABLES'"},
