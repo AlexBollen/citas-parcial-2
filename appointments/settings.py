@@ -60,7 +60,7 @@ DATABASES = {
         "ENGINE": "django.db.backends.mysql",
         "NAME": os.getenv("RDS_DB_NAME", "citas"),
         "USER": os.getenv("RDS_USERNAME", "root"),
-        "PASSWORD": os.getenv("RDS_PASSWORD", "admin"),
+        "PASSWORD": os.getenv("RDS_PASSWORD", ""),
         "HOST": os.getenv("RDS_HOSTNAME", "localhost"),
         "PORT": os.getenv("RDS_PORT", "3306"),
         "OPTIONS": {"init_command": "SET sql_mode='STRICT_TRANS_TABLES'"},
